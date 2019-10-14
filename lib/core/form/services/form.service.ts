@@ -437,7 +437,7 @@ export class FormService {
      * @returns URL string
      */
     getUserProfileImageApi(userId: number): string {
-        return this.apiService.getInstance().activiti.userApi.getUserProfilePictureUrl(userId.toString);
+        return this.apiService.getInstance().activiti.userApi.getUserProfilePictureUrl(userId.toString());
     }
 
     /**
