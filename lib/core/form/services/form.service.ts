@@ -437,7 +437,7 @@ export class FormService {
      * @returns URL string
      */
     getUserProfileImageApi(userId: number): string {
-        return this.apiService.getInstance().activiti.userApi.getUserProfilePictureUrl(userId);
+        return this.apiService.getInstance().activiti.userApi.getUserProfilePictureUrl(userId.toString);
     }
 
     /**
@@ -455,7 +455,7 @@ export class FormService {
             .pipe(
                 switchMap((response: any) => <UserProcessModel[]> response.data || []),
                 map((user: any) => {
-                    user.userImage = this.getUserProfileImageApi(user.id.toString());
+                    user.userImage = this.getUserProfileImageApi(user.id);
                     return of(user);
                 }),
                 combineAll(),
