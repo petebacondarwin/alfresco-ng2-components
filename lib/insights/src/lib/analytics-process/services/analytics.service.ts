@@ -230,7 +230,7 @@ export class AnalyticsService {
     }
 
     updateReport(reportId: number, name: string): Observable<any> {
-        return from(this.apiService.getInstance().activiti.reportApi.updateReport(reportId, name))
+        return from(this.apiService.getInstance().activiti.reportApi.updateReport(reportId.toString(), name))
             .pipe(
                 map(() => this.logService.info('upload')),
                 catchError((err) => this.handleError(err))
