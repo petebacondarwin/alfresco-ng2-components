@@ -67,13 +67,13 @@ export class AnalyticsGeneratorComponent implements OnChanges {
 
     ngOnChanges() {
         if (this.reportId && this.reportParamQuery) {
-            this.generateReport(this.reportId, this.reportParamQuery);
+            this.generateReport(this.reportId.toString(), this.reportParamQuery);
         } else {
             this.reset();
         }
     }
 
-    public generateReport(reportId, reportParamQuery) {
+    public generateReport(reportId: string, reportParamQuery) {
         if (reportParamQuery === undefined || reportParamQuery === null) {
             reportParamQuery = {};
         }
