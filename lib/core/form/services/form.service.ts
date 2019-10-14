@@ -455,7 +455,7 @@ export class FormService {
             .pipe(
                 switchMap((response: any) => <UserProcessModel[]> response.data || []),
                 map((user: any) => {
-                    user.userImage = this.getUserProfileImageApi(user.id);
+                    user.userImage = this.getUserProfileImageApi(user.id.toString());
                     return of(user);
                 }),
                 combineAll(),

@@ -96,7 +96,7 @@ export class PeopleProcessService {
     }
 
     private getUserProfileImageApi(userId: number) {
-        return this.alfrescoJsApi.getInstance().activiti.userApi.getUserProfilePictureUrl(userId);
+        return this.alfrescoJsApi.getInstance().activiti.userApi.getUserProfilePictureUrl(userId.toString());
     }
 
     /**
